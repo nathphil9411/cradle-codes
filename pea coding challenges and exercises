@@ -1,0 +1,138 @@
+//1. a program that print helloworld
+const printHello = function () {
+  alert("hello World");
+};
+//2. a program that greet any user
+let greet = function greet(firstName, lastName) {
+  alert("Hello " + firstName + " " + lastName);
+};
+
+//greet("nath", "nwabueze");
+
+//3.sum of a given range
+function summation(n) {
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += i;
+  }
+  console.log(sum);
+}
+//summation(5);
+
+//4. a program that prints multiples of three.
+function multipleSummation(n) {
+  let sum = 0;
+  for (let i = 0; i <= n; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      sum += i;
+    }
+  }
+  console.log(sum);
+}
+
+5; //A program that print multiplication table
+function mulptiplicationTable(n) {
+  let product = 0;
+
+  for (let i = 1; i <= 12; i++) {
+    product = n * i;
+    console.log(`${n}  x  ${i} = ${product}`);
+  }
+}
+mulptiplicationTable(4);
+
+//6. A program that prints prime number of a given range.
+const primeNumber = function (num) {
+  for (let i = 1; i <= num; i++) {
+    let remainder = 0;
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) {
+        remainder = 1;
+        break;
+      }
+    }
+    if (i > 1 && remainder == 0) {
+      console.log(`${i} is a prime number`);
+    }
+  }
+};
+
+//7. a program that logs maximum value of arrays
+const maximumValue = function (arr) {
+  console.log(Math.max(...arr));
+};
+//8. a program that logs minimum value of arrays
+const minimumValue = function (arr) {
+  console.log(Math.min(...arr));
+};
+//9. a program that reverse an array
+function reverse(n) {
+  console.log(n.reverse());
+}
+//10. a program that reverse a string
+const reverseString = function (word) {
+  let newWord = "";
+  for (let i = word.length - 1; i >= 0; i--) {
+    newWord += word[i];
+  }
+  console.log(newWord);
+};
+//11. a program that prints longes string in an array
+const longestStr = function (arr) {
+  let maxStr = arr[0].length;
+  let longestWord = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    let max = arr[i].length;
+    if (max > maxStr) {
+      longestWord = arr[i];
+      maxStr = max;
+    }
+  }
+  console.log(longestWord);
+};
+// 12. a program that checks if an element is in an array.
+const checkElement = function (arr, element) {
+  console.log(arr.includes(element));
+};
+
+// no 13 progame that concantenate two arrays
+function joinArrays(arr1, arr2) {
+  console.log(arr1.concat(arr2));
+}
+//14. program that takes values from alternate array
+function alternateArray(arr1, arr2) {
+  let newArray = [];
+  let arrayLength = 0;
+  arr1.length > arr2.length || arr1.length === arr2.length
+    ? (arrayLength = arr1.length)
+    : (arrayLength = arr2.length);
+  for (let i = 0; i < arr1.length; i++) {
+    newArray.push(arr1[i]);
+    newArray.push(arr2[i]);
+  }
+  newArray = newArray.filter(function (element) {
+    return element !== undefined;
+  });
+  console.log(newArray);
+}
+
+alternateArray([2, 5, 6, 8, 7, 9], ["a", "f", "e ", "et", "okay"]);
+//15. program that print within a frame
+const printFrame = function (arr) {
+  let maxStr = arr[0].length;
+  let str = "*";
+  let max = 0;
+  for (let i = 1; i < arr.length; i++) {
+    max = arr[i].length;
+    if (max > maxStr) {
+      maxStr = max;
+    }
+    console.log(max);
+  }
+  str = str.repeat(maxStr + 4);
+  for (let j = 0; j < arr.length; j++) {
+    str += `\n* ${arr[j]} ${" ".repeat(maxStr - arr[j].length)}*`;
+  }
+  str += `\n${"*".repeat(maxStr + 4)}`;
+  console.log(str);
+};
